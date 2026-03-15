@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Memory de parejas</string>
+    <string name="subtitle_start">Encuentra las 8 parejas tocando dos cartas cada vez</string>
+    <string name="subtitle_playing">Encuentra las parejas con el menor numero de intentos</string>
+    <string name="subtitle_finished">Has encontrado todas las parejas</string>
+    <string name="attempts_value">Intentos: %1$d</string>
+    <string name="best_score_value">Mejor: %1$d</string>
+    <string name="best_score_empty">Mejor: —</string>
+    <string name="status_start">Pulsa empezar para mezclar las cartas</string>
+    <string name="status_playing">Toca una carta para empezar</string>
+    <string name="status_second_pick">Ahora elige otra carta</string>
+    <string name="status_match">Pareja encontrada</string>
+    <string name="status_try_again">No coinciden. Intentalo otra vez</string>
+    <string name="status_finished">Has ganado en %1$d intentos</string>
+    <string name="start_game">Empezar</string>
+    <string name="restart_game">Reiniciar</string>
+    <string name="play_again">Volver a jugar</string>
+    <string name="card_image">Imagen de la carta</string>
+</resources>
