@@ -1,4 +1,4 @@
-package com.jorge.juegovocabulario;
+package com.jorge.memory;
 
 import android.view.LayoutInflater;
 import android.view.View;

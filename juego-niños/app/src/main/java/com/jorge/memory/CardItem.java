@@ -1,4 +1,4 @@
-package com.jorge.juegovocabulario;
+package com.jorge.memory;
 
 public class CardItem {
     private final int imageResId;

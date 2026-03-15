@@ -1,4 +1,4 @@
-package com.jorge.juegovocabulario;
+package com.jorge.memory;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
