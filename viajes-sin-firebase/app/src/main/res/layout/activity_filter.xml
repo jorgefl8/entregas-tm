@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/screenBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Filtros"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/textPrimary"
+            android:fontFamily="sans-serif-black"
+            android:layout_marginBottom="24dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/filter_date_start"
+            android:textSize="14sp"
+            android:textColor="@color/textSecondary" />
+
+        <Button
+            android:id="@+id/btnDateStart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/bg_card"
+            android:textColor="@color/textPrimary"
+            android:gravity="start|center_vertical"
+            android:paddingStart="16dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/filter_date_end"
+            android:textSize="14sp"
+            android:textColor="@color/textSecondary" />
+
+        <Button
+            android:id="@+id/btnDateEnd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/bg_card"
+            android:textColor="@color/textPrimary"
+            android:gravity="start|center_vertical"
+            android:paddingStart="16dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/filter_price_min"
+            android:textSize="14sp"
+            android:textColor="@color/textSecondary" />
+
+        <EditText
+            android:id="@+id/editPriceMin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="0"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/bg_card"
+            android:padding="12dp"
+            android:textColor="@color/textPrimary" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/filter_price_max"
+            android:textSize="14sp"
+            android:textColor="@color/textSecondary" />
+
+        <EditText
+            android:id="@+id/editPriceMax"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="9999"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/bg_card"
+            android:padding="12dp"
+            android:textColor="@color/textPrimary" />
+
+        <Button
+            android:id="@+id/btnSaveFilter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_save_filter"
+            android:background="@drawable/bg_button"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:padding="14dp" />
+
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Acme Explorer</string>
+    <string name="splash_title">Acme Explorer</string>
+    <string name="splash_subtitle">¡Reserva ya!</string>
+    <string name="menu_available">Ver viajes disponibles</string>
+    <string name="menu_selected">Ver viajes seleccionados</string>
+    <string name="btn_filter">Filtrar</string>
+    <string name="btn_save_filter">Guardar y volver</string>
+    <string name="btn_buy">Comprar</string>
+    <string name="label_price">Precio:</string>
+    <string name="label_departure_date">Fecha de salida:</string>
+    <string name="label_arrival_date">Fecha de llegada:</string>
+    <string name="label_departure_place">Lugar de salida:</string>
+    <string name="label_description">Descripción:</string>
+    <string name="label_select">Seleccionar</string>
+    <string name="filter_date_start">Fecha inicio</string>
+    <string name="filter_date_end">Fecha fin</string>
+    <string name="filter_price_min">Precio mínimo (€)</string>
+    <string name="filter_price_max">Precio máximo (€)</string>
+    <string name="no_selected_trips">No hay viajes seleccionados</string>
+    <string name="columns_toggle">Columnas</string>
+    <string name="selected_trips_title">Viajes seleccionados</string>
+</resources>
