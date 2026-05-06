@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">ACME Explorer</string>
+
+    <!-- Login -->
+    <string name="login_title">Inicia sesión</string>
+    <string name="login_subtitle">Accede para ver el catálogo de viajes</string>
+    <string name="login_email_hint">Correo electrónico</string>
+    <string name="login_pass_hint">Contraseña</string>
+    <string name="login_button_mail">Acceder</string>
+    <string name="login_button_google">Acceder con Google</string>
+    <string name="login_button_register">¿No tienes cuenta? Regístrate</string>
+
+    <string name="login_error_email_empty">El correo electrónico no puede estar vacío</string>
+    <string name="login_error_pass_empty">La contraseña no puede estar vacía</string>
+    <string name="login_error_invalid">Correo o contraseña incorrectos</string>
+    <string name="login_error_unverified">Aún no has verificado tu cuenta. ¿Quieres que te enviemos un correo de verificación?</string>
+    <string name="login_error_send_verification">Reenviar correo</string>
+    <string name="login_error_cancel">Cancelar</string>
+    <string name="login_verification_sent">Hemos enviado un correo de verificación a tu dirección</string>
+    <string name="login_verification_failed">No se ha podido enviar el correo de verificación</string>
+    <string name="login_google_failed">El acceso con Google ha fallado</string>
+    <string name="login_play_services_error">Necesitas Google Play Services actualizado</string>
+    <string name="login_play_services_action">Actualizar</string>
+    <string name="login_success">Bienvenido, %1$s</string>
+
+    <!-- SignUp -->
+    <string name="signup_title">Crear cuenta</string>
+    <string name="signup_email_hint">Correo electrónico</string>
+    <string name="signup_pass_hint">Contraseña</string>
+    <string name="signup_pass_confirmation_hint">Repite la contraseña</string>
+    <string name="signup_button">Registrar</string>
+    <string name="signup_error_email_invalid">La dirección de correo no es válida</string>
+    <string name="signup_error_pass_invalid">La contraseña no puede estar vacía</string>
+    <string name="signup_error_pass_mismatch">Las contraseñas no coinciden</string>
+    <string name="signup_error_failed">No se ha podido registrar el usuario</string>
+    <string name="signup_success">Usuario registrado. Revisa tu correo para verificar la cuenta.</string>
+
+    <!-- default_web_client_id lo autogenera el plugin google-services a partir de google-services.json -->
+</resources>

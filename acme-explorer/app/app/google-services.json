@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1029306257076",
+    "project_id": "acme-tm-ff9f8",
+    "storage_bucket": "acme-tm-ff9f8.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1029306257076:android:2026eba71fae374aa151e1",
+        "android_client_info": {
+          "package_name": "com.jorge.acmeexplorer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1029306257076-5vktp4it9mkmqlj6qhr6jrkhf1lpac3p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.jorge.acmeexplorer",
+            "certificate_hash": "dd1a05eeef4570dd9353fcce8e39f42e7ea483b7"
+          }
+        },
+        {
+          "client_id": "1029306257076-6eico625vn4rimvaltmt2aml7fslvkft.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD26DItZERPE_arfcRzNwBWB3JCjmxnkwQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1029306257076-6eico625vn4rimvaltmt2aml7fslvkft.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

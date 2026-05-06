@@ -1,0 +1,8 @@
+videos/
+
+**/.gradle/
+**/build/
+**/.idea/
+**/local.properties
+*.iml
+

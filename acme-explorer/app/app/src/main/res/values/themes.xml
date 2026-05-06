@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.Acmeexplorer" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/primaryButton</item>
+        <item name="colorPrimaryVariant">@color/primaryButton</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="android:statusBarColor">@color/screenBackground</item>
+        <item name="android:navigationBarColor">@color/screenBackground</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+</resources>
