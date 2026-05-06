@@ -24,6 +24,7 @@ import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.jorge.acme_explorer.service.FirestoreService;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -171,10 +172,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void onLoginSuccess(FirebaseUser user) {
+        FirestoreService.getInstance().ensureUserProfile(user);
+
         String name = user.getDisplayName();
         if (name == null || name.isEmpty()) name = user.getEmail();
         Toast.makeText(this, getString(R.string.login_success, name), Toast.LENGTH_SHORT).show();
-        // TODO (fase 3): startActivity(new Intent(this, TravelListActivity.class)); finish();
+
+        startActivity(new Intent(this, ProfileActivity.class));
+        finish();
     }
 
     private void showProgress(boolean show) {
