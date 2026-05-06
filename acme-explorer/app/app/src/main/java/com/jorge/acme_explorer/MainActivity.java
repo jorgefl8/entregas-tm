@@ -178,7 +178,7 @@ public class MainActivity extends AppCompatActivity {
         if (name == null || name.isEmpty()) name = user.getEmail();
         Toast.makeText(this, getString(R.string.login_success, name), Toast.LENGTH_SHORT).show();
 
-        startActivity(new Intent(this, ProfileActivity.class));
+        startActivity(new Intent(this, TravelListActivity.class));
         finish();
     }
 

@@ -3,6 +3,7 @@ package com.jorge.acme_explorer;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -60,9 +61,11 @@ public class ProfileActivity extends AppCompatActivity {
         profileSurnameEt = findViewById(R.id.profileSurnameEt);
         profileSaveButton = findViewById(R.id.profileSaveButton);
         profileLogoutButton = findViewById(R.id.profileLogoutButton);
+        ImageButton profileBackButton = findViewById(R.id.profileBackButton);
 
         profileEmail.setText(user.getEmail());
 
+        profileBackButton.setOnClickListener(v -> finish());
         profileSaveButton.setOnClickListener(v -> save());
         profileLogoutButton.setOnClickListener(v -> logout());
 

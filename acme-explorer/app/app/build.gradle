@@ -42,6 +42,7 @@ dependencies {
     implementation libs.firebase.firestore
     implementation libs.firebase.database
     implementation libs.play.services.auth
+    implementation libs.glide
 
     testImplementation libs.junit
     androidTestImplementation libs.androidx.junit
