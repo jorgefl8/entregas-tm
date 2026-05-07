@@ -83,7 +83,26 @@
                 android:textColor="@color/textPrimary"
                 android:lineSpacingExtra="2dp" />
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/travel_detail_map_title"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/textPrimary" />
+
         </LinearLayout>
+
+        <fragment
+            android:id="@+id/travelDetailMap"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="280dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="24dp" />
 
     </LinearLayout>
 

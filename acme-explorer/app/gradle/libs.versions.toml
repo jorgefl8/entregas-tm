@@ -12,6 +12,8 @@ cardview = "1.0.0"
 multidex = "2.0.1"
 firebaseBom = "33.5.1"
 playServicesAuth = "21.2.0"
+playServicesMaps = "19.0.0"
+playServicesLocation = "21.3.0"
 glide = "4.16.0"
 
 [libraries]
@@ -27,6 +29,8 @@ firebase-firestore = { group = "com.google.firebase", name = "firebase-firestore
 firebase-database = { group = "com.google.firebase", name = "firebase-database" }
 firebase-storage = { group = "com.google.firebase", name = "firebase-storage" }
 play-services-auth = { group = "com.google.android.gms", name = "play-services-auth", version.ref = "playServicesAuth" }
+play-services-maps = { group = "com.google.android.gms", name = "play-services-maps", version.ref = "playServicesMaps" }
+play-services-location = { group = "com.google.android.gms", name = "play-services-location", version.ref = "playServicesLocation" }
 glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
