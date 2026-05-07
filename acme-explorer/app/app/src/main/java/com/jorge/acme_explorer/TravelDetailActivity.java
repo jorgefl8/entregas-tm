@@ -11,6 +11,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
@@ -28,8 +29,16 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
 import com.jorge.acme_explorer.entity.Travel;
+import com.jorge.acme_explorer.entity.Weather;
+import com.jorge.acme_explorer.entity.WeatherConditions;
+import com.jorge.acme_explorer.entity.WeatherResponse;
 import com.jorge.acme_explorer.service.FirebaseDatabaseService;
+import com.jorge.acme_explorer.service.WeatherService;
 import com.jorge.acme_explorer.util.UtilFecha;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class TravelDetailActivity extends AppCompatActivity implements OnMapReadyCallback {
 
@@ -43,6 +52,13 @@ public class TravelDetailActivity extends AppCompatActivity implements OnMapRead
     private TextView travelDetailDates;
     private TextView travelDetailPrice;
     private TextView travelDetailDescription;
+
+    private CardView travelDetailWeatherCard;
+    private ImageView travelDetailWeatherIcon;
+    private TextView travelDetailWeatherCity;
+    private TextView travelDetailWeatherTemp;
+    private TextView travelDetailWeatherDescription;
+    private TextView travelDetailWeatherHumidity;
 
     private GoogleMap map;
     private Travel currentTravel;
@@ -64,6 +80,12 @@ public class TravelDetailActivity extends AppCompatActivity implements OnMapRead
         travelDetailDates = findViewById(R.id.travelDetailDates);
         travelDetailPrice = findViewById(R.id.travelDetailPrice);
         travelDetailDescription = findViewById(R.id.travelDetailDescription);
+        travelDetailWeatherCard = findViewById(R.id.travelDetailWeatherCard);
+        travelDetailWeatherIcon = findViewById(R.id.travelDetailWeatherIcon);
+        travelDetailWeatherCity = findViewById(R.id.travelDetailWeatherCity);
+        travelDetailWeatherTemp = findViewById(R.id.travelDetailWeatherTemp);
+        travelDetailWeatherDescription = findViewById(R.id.travelDetailWeatherDescription);
+        travelDetailWeatherHumidity = findViewById(R.id.travelDetailWeatherHumidity);
 
         ImageButton backButton = findViewById(R.id.travelDetailBack);
         backButton.setOnClickListener(v -> finish());
@@ -86,6 +108,7 @@ public class TravelDetailActivity extends AppCompatActivity implements OnMapRead
                         currentTravel = travel;
                         bind(travel);
                         drawTravelOnMap();
+                        loadWeatherForDestination(travel);
                     }
 
                     @Override
@@ -169,6 +192,52 @@ public class TravelDetailActivity extends AppCompatActivity implements OnMapRead
                     },
                     REQ_LOCATION_PERMISSION);
         }
+    }
+
+    private void loadWeatherForDestination(Travel travel) {
+        Call<WeatherResponse> call = WeatherService.getInstance().getCurrentWeather(
+                travel.getLatDestino(),
+                travel.getLngDestino(),
+                getString(R.string.open_weather_map_api_key)
+        );
+        call.enqueue(new Callback<WeatherResponse>() {
+            @Override
+            public void onResponse(@NonNull Call<WeatherResponse> call,
+                                   @NonNull Response<WeatherResponse> response) {
+                if (!response.isSuccessful() || response.body() == null) return;
+                bindWeather(response.body());
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<WeatherResponse> call, @NonNull Throwable t) {
+            }
+        });
+    }
+
+    private void bindWeather(WeatherResponse weatherResponse) {
+        WeatherConditions main = weatherResponse.getMain();
+        if (main == null) return;
+
+        String city = currentTravel != null ? currentTravel.getCiudadDestino() : weatherResponse.getName();
+        travelDetailWeatherCity.setText(getString(R.string.travel_detail_weather_title, city));
+        travelDetailWeatherTemp.setText(getString(R.string.travel_detail_weather_temp, main.getTemp()));
+        travelDetailWeatherHumidity.setText(getString(R.string.travel_detail_weather_humidity, main.getHumidity()));
+
+        if (weatherResponse.getWeather() != null && !weatherResponse.getWeather().isEmpty()) {
+            Weather first = weatherResponse.getWeather().get(0);
+            String desc = first.getDescription();
+            if (desc != null && !desc.isEmpty()) {
+                travelDetailWeatherDescription.setText(
+                        Character.toUpperCase(desc.charAt(0)) + desc.substring(1));
+            }
+            String iconCode = first.getIcon();
+            if (iconCode != null && !iconCode.isEmpty()) {
+                String iconUrl = "https://openweathermap.org/img/wn/" + iconCode + "@2x.png";
+                Glide.with(this).load(iconUrl).into(travelDetailWeatherIcon);
+            }
+        }
+
+        travelDetailWeatherCard.setVisibility(android.view.View.VISIBLE);
     }
 
     @Override
