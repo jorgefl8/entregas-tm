@@ -65,6 +65,15 @@ public class FirestoreService {
                 .addOnCompleteListener(onComplete);
     }
 
+    public void updateUserPhotoUrl(@NonNull String uid, @NonNull String photoUrl,
+                                   OnCompleteListener<Void> onComplete) {
+        Map<String, Object> updates = new HashMap<>();
+        updates.put("photoUrl", photoUrl);
+        db.collection(COLLECTION_USERS).document(uid)
+                .set(updates, SetOptions.merge())
+                .addOnCompleteListener(onComplete);
+    }
+
     private static String splitFirst(String displayName) {
         if (displayName == null || displayName.isEmpty()) return "";
         int sp = displayName.indexOf(' ');

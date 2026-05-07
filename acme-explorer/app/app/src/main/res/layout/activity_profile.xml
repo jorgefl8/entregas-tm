@@ -47,9 +47,38 @@
             android:id="@+id/profileEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
+            android:layout_marginBottom="16dp"
             android:textSize="14sp"
             android:textColor="@color/textSecondary" />
+
+        <ImageView
+            android:id="@+id/profilePhoto"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center_horizontal"
+            android:scaleType="centerCrop"
+            android:background="@drawable/bg_avatar_placeholder"
+            android:contentDescription="@string/profile_photo_desc" />
+
+        <Button
+            android:id="@+id/profilePhotoButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            android:background="@android:color/transparent"
+            android:text="@string/profile_change_photo"
+            android:textAllCaps="false"
+            android:textColor="@color/primaryButton" />
+
+        <ProgressBar
+            android:id="@+id/profilePhotoProgress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="8dp"
+            android:visibility="gone" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/profileName"

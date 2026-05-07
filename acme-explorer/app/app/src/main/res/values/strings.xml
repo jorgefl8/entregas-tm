@@ -45,6 +45,10 @@
     <string name="profile_save_error">No se pudo guardar el perfil</string>
     <string name="profile_logged_out">Sesión cerrada</string>
     <string name="profile_back">Volver</string>
+    <string name="profile_change_photo">Cambiar foto</string>
+    <string name="profile_photo_desc">Foto de perfil</string>
+    <string name="profile_photo_uploaded">Foto actualizada</string>
+    <string name="profile_photo_upload_error">No se pudo subir la foto</string>
 
     <!-- Travel list -->
     <string name="travel_list_title">Catálogo de viajes</string>
