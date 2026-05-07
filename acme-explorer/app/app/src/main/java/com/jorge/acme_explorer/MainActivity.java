@@ -45,9 +45,17 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
         mAuth = FirebaseAuth.getInstance();
+
+        FirebaseUser current = mAuth.getCurrentUser();
+        if (current != null && current.isEmailVerified()) {
+            startActivity(new Intent(this, TravelListActivity.class));
+            finish();
+            return;
+        }
+
+        setContentView(R.layout.activity_main);
 
         loginEmail = findViewById(R.id.loginEmail);
         loginPass = findViewById(R.id.loginPass);
@@ -71,15 +79,6 @@ public class MainActivity extends AppCompatActivity {
             i.putExtra(SignUpActivity.EXTRA_EMAIL, getText(loginEmailEt));
             startActivity(i);
         });
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        FirebaseUser user = mAuth.getCurrentUser();
-        if (user != null && user.isEmailVerified()) {
-            onLoginSuccess(user);
-        }
     }
 
     private void attemptLoginMail() {
