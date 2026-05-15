@@ -1,3 +1,0 @@
-key weather acme-explorer= 6062e7bf22208cdd5a82c2f0cecce0a1
-
-key maps acme-explorer= AIzaSyCpMNwozPs9XjBLSOQ91b7OCMua7hN1bpY
